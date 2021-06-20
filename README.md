@@ -1,7 +1,7 @@
 To download and run this project, run the following from your WSL command line:
 
 git clone https://github.com/vladilav007/PolyclinicManagement.git
-cd Hogwart-2020
+cd PolyclinicManagement
 bundle install
 yarn install
 rails db:migrate
