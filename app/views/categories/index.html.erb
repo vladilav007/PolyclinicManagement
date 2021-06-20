@@ -1,0 +1,9 @@
+<% if @categories.empty? %>
+    <p> There no categories avalible. </p>
+<% else %>
+    <% @categories.each do |category| %>
+        <h2> <%= category.name %> </h2>
+        <p> There are <%= category.users.count  %> users in this category </p>
+        <p> Learn more about category <%= category.name %>. </p>
+    <% end %>
+<% end %>

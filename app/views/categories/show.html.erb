@@ -1,0 +1,15 @@
+<h2> <%= @category.name %> </h2>
+
+    <p> There are <%= @category.users.count  %> users in this category </p>
+    <p> Learn more about category <%= @category.name %>. </p>
+
+<h3> Users in this category <%= @category.name%> </h3>
+<% if @category.users.empty? %>
+    <p> There no users in this category </p>
+<% else %>
+    <ul>
+        <% @category.users.each do |user| %>
+            <li> <%= user.name %> </li>
+        <% end %>
+    </ul>
+<% end %>
