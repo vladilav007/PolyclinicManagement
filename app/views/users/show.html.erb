@@ -1,3 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2><%= @user.name %></h2>
+<p>
+    This user belongs to category <%= @user.category.name %>.
+</p>
 
+<h3>Appointments</h3>
+<% if @user.doctors.empty? %>
+    <p> <%= @user.name %> has never had an appointment with a doctor. </p>
+<% else %>
+    <p> <%= @user.name %> has appointments with a doctor: </p>
+    <ul>
+        <% @user.doctors.each do |doctor|%>
+            <li><%= link_to doctor.name, doctor %></li>
+        <% end %>
+    </ul>
+<% end %>

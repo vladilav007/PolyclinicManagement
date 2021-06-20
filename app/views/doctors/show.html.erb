@@ -1,0 +1,17 @@
+<h2><%= @doctor.name %></h2>
+<p>
+    This doctor belongs to category <%= link_to @doctor.category.name, @doctor.category %>.
+</p>
+
+<h3> Appointments </h3>
+
+<% if @doctor.appointments.empty? %>
+    <p>No appointmes for <%= @doctor.name %></p>
+<% else %>
+    <ul>
+    <% @doctor.appointments.each do |app| %>
+        <li> Appointment with <%= link_to app.user.name %> on <%= app.appointment_date%>. </li>
+    <% end %>
+    </ul>
+<% end %>
+

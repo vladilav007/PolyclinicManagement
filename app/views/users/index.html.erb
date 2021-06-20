@@ -4,7 +4,10 @@
 <% else%>
     <ul>
         <% @users.each do |user| %>
-            <li> <%= user.name %> </li>
+            <li> <%= link_to user.name, user %> of category
+                 <%= link_to user.category.name, user.category %>.
+            </li> 
+
         <% end %>
     </ul>
 <% end %>

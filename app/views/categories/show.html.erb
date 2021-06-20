@@ -3,13 +3,24 @@
     <p> There are <%= @category.users.count  %> users in this category </p>
     <p> Learn more about category <%= @category.name %>. </p>
 
+<h3> Doctors in this category <%= @category.name%> </h3>
+<% if @category.doctors.empty? %>
+    <p> There no doctors in this category </p>
+<% else %>
+    <ul>
+        <% @category.doctors.each do |doctor| %>
+            <li> <%= link_to doctor.name, doctor %> </li>
+        <% end %>
+    </ul>
+<% end %>
+
 <h3> Users in this category <%= @category.name%> </h3>
 <% if @category.users.empty? %>
     <p> There no users in this category </p>
 <% else %>
     <ul>
         <% @category.users.each do |user| %>
-            <li> <%= user.name %> </li>
+            <li> <%= link_to user.name, user %> </li>
         <% end %>
     </ul>
 <% end %>
