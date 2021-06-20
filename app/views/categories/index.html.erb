@@ -4,6 +4,6 @@
     <% @categories.each do |category| %>
         <h2> <%= category.name %> </h2>
         <p> There are <%= category.users.count  %> users in this category </p>
-        <p> Learn more about category <%= category.name %>. </p>
+        <p> Learn more about <%=  link_to "category #{category.name}", category %>. </p>
     <% end %>
 <% end %>

@@ -11,6 +11,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <h1> Vrorobei Vladyslav Hospital </h2>
+          <p>
+            <%= link_to 'Home', root_path %>
+          </p>
+       </header>
+        <%= yield %>
+    </div>
   </body>
 </html>
